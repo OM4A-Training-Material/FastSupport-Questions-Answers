@@ -18,7 +18,7 @@ A: All solvers except CPLEX can be used. Specify your chosen solver in the run-f
 
 ---
 
-## ⚡ OpenTEPES
+## ⚡ openTEPES
 
 **Q: How can I install it?**\
 A:
