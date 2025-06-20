@@ -119,3 +119,55 @@ Templates: [Example on GitHub](https://github.com/IIT-EnergySystemModels/InfraFa
 **Q: On which networks can InfraFair be applied?**\
 A: Any energy network: electricity, gas, heat, or hydrogen.\
 Required: Flow data per asset, and source/sink data for each node.
+
+---
+
+## 🚗 EV-PV
+
+**Q: How do I install EVPV?**  
+A: To install the EVPV-Simulator, follow the [Installation Guide](https://evpv-simulator.readthedocs.io/en/latest/user_guide/installation.html). You’ll need Python installed on your machine. Then, you can install the model using `pip`.
+
+**Q: What are the first steps after installing?**  
+A: 
+- Familiarize yourself with the documentation available on [ReadTheDocs](https://evpv-simulator.readthedocs.io), YouTube tutorials, and the OM4A training platform.  
+- Try running EVPV in basic mode using the "Addis Ababa Simple Example" provided.
+
+**Q: How can I run EVPV?**  
+A: EVPV can be run in two ways:  
+1. **Basic usage:** via the command-line interface (CLI).  
+2. **Advanced usage:** by importing EVPV into your own Python script as a package.  
+More details are available on [ReadTheDocs](https://evpv-simulator.readthedocs.io).
+
+**Q: What inputs are needed to run the model?**  
+A: To run EVPV for your case study, you will need:  
+- A configuration file containing all parameters specific to your case study  
+- A GeoJSON file with the boundary of your region of interest  
+- A TIFF file representing the residential population distribution  
+- Two CSV files listing the latitude and longitude of workplaces and other POIs
+
+**Q: How long does it take for the model to run?**  
+A: It depends on several factor, such as:
+- The number of traffic zones  
+- Whether OpenRouteService (ORS) is used for routing  
+- The number of EVs simulated  
+- The number of days considered for EV-PV complementarity analysis  
+
+As a reference, the Addis Ababa examples typically run in under 2–3 minutes on a standard laptop.
+
+**Q: Where can I find details about the methodology?**  
+A: See the documentation on [ReadTheDocs](https://evpv-simulator.readthedocs.io) and refer to the [reference paper](https://arxiv.org/pdf/2503.03671).
+
+**Q: Is it possible to define different PV system types per location?**  
+A: No. Currently, only one PV system type can be defined per simulation run (e.g., rooftop, ground-mounted with or without tracking).
+
+**Q: What is the maximum possible spatial resolution?**  
+A: There is no hard limit. However:
+- Higher spatial resolution increases computation time  
+- The gravity model used for commuting may not work reliably at very fine resolutions  
+- Input data must also be available at the desired resolution
+
+**Q: Will additional graphics or visualizations be added to the model?**  
+A: No major additions are planned. However:
+- Many raws outputs can easily be visualized using Excel or other tools  
+- Spatial results are already rendered as interactive HTML maps  
+- Future integration with the OM4A GIS tool will enable built-in graphical outputs
